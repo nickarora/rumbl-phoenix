@@ -1,15 +1,14 @@
 defmodule Rumbl.UserController do
   use Rumbl.Web, :controller
+  alias Rumbl.User
 
   def index(conn, _params) do
-    # users = Repo.all(Rumbl.User)
-    users = []
+    users = Repo.all(User)
     render conn, "index.html", users: users
   end
 
   def show(conn, %{"id" => id}) do
-    # user = Repo.get(Rumbl.User, id)
-    user = %{id: "1", name: "José", username: "josevalim", password: "elixir"}
+    user = Repo.get(User, id)
     render conn, "show.html", user: user
   end
 end
