@@ -38,6 +38,20 @@ form.link, form.button {
   padding-left: 15px;
 }
 
+/* nav bar */
+.nav > li > a {
+  border: none;
+}
+
+.nav > li > a.username {
+  font-weight: bold;
+}
+
+.nav > li > form > a {
+  padding: 10px 15px;
+  border: none;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
