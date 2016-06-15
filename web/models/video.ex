@@ -10,7 +10,7 @@ defmodule Rumbl.Video do
     timestamps
   end
 
-  @required_fields ~w(url title description)
+  @required_fields ~w(url title description category_id)
   @optional_fields ~w()
 
   @doc """
@@ -22,5 +22,6 @@ defmodule Rumbl.Video do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> assoc_constraint(:category)
   end
 end
